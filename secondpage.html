@@ -7,9 +7,8 @@
     <style>
         body {
             text-align: center;
-            margin-top: 30px;
             font-family: 'Courier';
-            background-color:#FFFF99;
+            background-color: #FFFF99;
             color: #FF9494;
             margin: 0;
             padding: 0;
@@ -19,32 +18,53 @@
             align-items: center;
             height: 100vh;
         }
+
+        #container {
+            animation: slideIn 1s ease;
+        }
+
         #valentineQuestion {
             font-size: 50px;
             margin-bottom: 10px;
         }
+
         .answerButton {
             padding: 10px 20px;
             font-size: 18px;
             cursor: pointer;
             margin: 10px;
-            font-family: 'courier';
+            font-family: 'Courier';
             margin-bottom: 20px;
-            background-color:#FFE3E1;
+            background-color: #FFE3E1;
             color: #e67373;
             border-radius: 12px;
             border: 2px solid #FFE3E1;
         }
+
         .responsive {
             max-width: 100%;
             height: auto;
         }
+
+        /* Define keyframes for slide-in animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px); /* Slide from top */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Slide to original position */
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="valentineQuestion"><b>I would love to take you out on Valentine, will you go out with me &#9829</b></div>
-    <button class="answerButton" onclick="location.href='thankyou.html'">Đi date thoi</button>
-    <button class="answerButton" id="noButton" style="display: none;"> No </button>
+    <div id="container">
+        <div id="valentineQuestion"><b>I would love to take you out on Valentine, will you go out with me &#9829</b></div>
+        <button class="answerButton" onclick="location.href='thankyou.html'">Đi date thoi</button>
+        <button class="answerButton" id="noButton" style="display: none;"> No </button>
+    </div>
     <br>
 
     <script>
