@@ -80,12 +80,31 @@
         
         <h1><b>Cậu có thể nhập mật khẩu để tiếp tục đến trang tiếp theo</b></h1>
 
-        <form method="post">
+        <form id="passwordForm">
             <input type="password" name="password" placeholder="Enter your password" class="password-input">
-            <button class ="button">Submit</button>
+            <button type="submit" class ="button">Submit</button>
         </form>
 
     </div>
     <button id="button" onclick="location.href='secondpage.html'">Next Page</button>
+
+    <script>
+        document.getElementById("passwordForm").addEventListener("submit", function(event) {
+            // Prevent the form from submitting by default
+            event.preventDefault();
+            
+            // Get the entered password
+            var password = document.querySelector(".password-input").value;
+            
+            // Check if the password is correct
+            if (password === "30012024") {
+                // Redirect to secondpage.html if the password is correct
+                window.location.href = "secondpage.html";
+            } else {
+                // // If the password is incorrect, display an alert
+                // alert("Wrong password. Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>
